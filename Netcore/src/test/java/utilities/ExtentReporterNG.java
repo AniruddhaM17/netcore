@@ -12,7 +12,7 @@ public class ExtentReporterNG {
 
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 
-		reporter.config().setReportName("Eduvanz Test");
+		reporter.config().setReportName("Netcore Test");
 
 		reporter.config().setDocumentTitle("Test Results");
 
@@ -26,4 +26,3 @@ public class ExtentReporterNG {
 		}	
 
 	}
-

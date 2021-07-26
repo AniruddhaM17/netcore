@@ -23,11 +23,23 @@ public class LandingPage_po {
 	By roundTrip = By.xpath("//li[@data-cy='roundTrip']/span");
 	By departure = By.xpath("//div[contains(@class,'dates')]");
 	By returnDate = By.xpath("//div[contains(@class,'reDates')]");
-	By todayDate = By.xpath("//div[@class='DayPicker-Day DayPicker-Day--today']");
-	By secondDate = By.xpath("//div[@class='DayPicker-Day']");
+	// By todayDate = By.xpath("//div[contains(@class,'today')]");
+	By secondDate = By.xpath("//div[contains(@class,'today')]/..//div[2]");
 	By traveller = By.xpath("//div[@data-cy='flightTraveller']");
 	By travellerSelection = By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']/li");
-	By travellerOptions = By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']/li"); 
+	By travellerAdult = By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']/li[@data-cy='adults-2']");
+	By travellerInfant = By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']/li[@data-cy='infants-1']");
+	By travellerChildren = By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']/li[@data-cy='children-1']");
+	By pastDate = By.xpath(
+			"//div[@class='DayPicker-Day DayPicker-Day--start DayPicker-Day--selected DayPicker-Day--today']/./preceding-sibling::div[1]");
+	By popup = By.xpath("//div[@class='autopop__wrap makeFlex column defaultCursor']");
+	By businessClass = By.xpath("//ul[@class='guestCounter classSelect font12 darkText']/li[@data-cy='travelClass-2']");
+	By applyButton = By.xpath("//button[@data-cy='travellerApplyBtn']");
+	By numberOfTraveller = By.xpath("//span[@data-cy='travellerText']/span");
+	By travellerClass = By.xpath("//label[@for='travellers']/p[2]");
+	By todayDate = By.xpath(
+			"//div[@class='DayPicker-Months']/div[1]/div[@class='DayPicker-Body']/div/div[not(contains(@class,'disabled'))]//p[text()=${number}]");
+	By search = By.xpath("//a[text()='Search']");
 
 	public WebElement Login() {
 		return driver.findElement(login);
@@ -73,7 +85,47 @@ public class LandingPage_po {
 		return driver.findElement(traveller);
 	}
 
-	public List<WebElement> TravellerSelection() {
-		return driver.findElements(travellerSelection);
+	public WebElement travellerAdult() {
+		return driver.findElement(travellerAdult);
+	}
+
+	public String PastDate() {
+		return driver.findElement(pastDate).getAttribute("class");
+	}
+
+	public WebElement returnDate() {
+		return driver.findElement(returnDate);
+	}
+
+	public WebElement popup() {
+		return driver.findElement(popup);
+	}
+
+	public WebElement travellerInfant() {
+		return driver.findElement(travellerInfant);
+	}
+
+	public WebElement travellerChildren() {
+		return driver.findElement(travellerChildren);
+	}
+
+	public WebElement businessClass() {
+		return driver.findElement(businessClass);
+	}
+
+	public WebElement applyButton() {
+		return driver.findElement(applyButton);
+	}
+
+	public WebElement numberOfTraveller() {
+		return driver.findElement(numberOfTraveller);
+	}
+
+	public String travellerClass() {
+		return driver.findElement(travellerClass).getText();
+	}
+
+	public WebElement search() {
+		return driver.findElement(search);
 	}
 }

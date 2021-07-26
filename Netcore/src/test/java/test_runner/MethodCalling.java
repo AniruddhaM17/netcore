@@ -22,21 +22,14 @@ public class MethodCalling extends Hooks {
 	public void searchFlight() throws IOException {
 
 		Logic.searchFlight();
+		System.out.println("Flight details entered successfully");
+	}
+	
+	@Test(priority = 1)
+	public void flightSearchResult() throws IOException {
+
+		Logic.flightResult();
+		System.out.println("Flight results validated successfully");
 	}
 
-	/*
-	 * @Test(priority = 1) public void authentication() {
-	 * 
-	 * Logic.Authentication(); }
-	 * 
-	 * @Test(priority = 2) public void registration() {
-	 * 
-	 * Logic.registrationLogic(); Logic.dress(); }
-	 * 
-	 * @Test(priority = 3) public void conditions() throws InterruptedException {
-	 * Logic.verifyConditions(); }
-	 * 
-	 * @Test(priority = 4) public void purchaseProcess() throws InterruptedException
-	 * { Logic.purchaseProcess(); }
-	 */
 }
